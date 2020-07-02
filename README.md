@@ -18,21 +18,12 @@ Whatsapp Audio Speed Changer
 </div>
 <hr />
 
+## Features Added
 
-
-
-
-
-[//]: # "Add your gifs/images here:"
-
-
-
-## Features
-
-[//]: # "Add the features of your project here:"
-
-
-- 💻 **Javascript** — The good and old pure (Vanilla) JavaScript!
+1. Easy UI to change route
+2. When click on header (tumblr and controller area) you can change the audio speed by using "d" and "s" keyboard shortcuts
+3. It work to any audio loaded or any mutation on UI
+4. No performance issues
 
 ## Getting started
 
@@ -41,3 +32,6 @@ Whatsapp Audio Speed Changer
 3. Upload the extension folder by clicking on "Load unpacked" and pointing to the extension folder direction.
 4. If unable, enable the extension.
 5. The buttons should appear on the browser as shown on the picture above.
+
+
+this repo is a fork from <a href="https://github.com/alexguimenti/whatsappAudioSpeedChanger" target="_blank">alexguimenti/whatsappAudioSpeedChanger</a>
