@@ -1,8 +1,8 @@
-.speedContainer {
-  margin: 0 20px;
+.speed-container {
+  margin: 0;
 }
 
-.speedDisplay {
+.speed-display {
   width: 35px;
   max-width: 35px;
   display: inline-block;
@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.speedButton {
+.speed-button {
   color: gray;
   font-size: 1rem;
   font-weight: bold;
