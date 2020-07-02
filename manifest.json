@@ -2,6 +2,11 @@
   "manifest_version": 2,
   "name": "Whatsapp Audio Speed Controller",
   "version": "0.2",
+  "description": "Increase your produtivity",
+  "icons": {
+    "16": "icon16.png"
+  },
+  "author": "Marcello Marques de Oliveira",
   "content_scripts": [
     {
       "matches": [
