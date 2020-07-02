@@ -11,7 +11,7 @@
         "style.css"
       ],
       "js": [
-        "content.js"
+        "index.js"
       ]
     }
   ]
