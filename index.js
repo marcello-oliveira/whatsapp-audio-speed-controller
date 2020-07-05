@@ -18,6 +18,35 @@ const stateHandler = {
 
 const state = new Proxy(store, stateHandler);
 
+const throttle = (fn, milliseconds) => {
+  let lock = false;
+  return (...args) => {
+      if (lock) return;
+      lock = true;
+      timer = setTimeout(() => { fn(...args); lock = false; }, milliseconds);
+  };
+};
+
+const observeDOM = (function() {
+  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+  return function(obj, callback) {
+    if (MutationObserver){
+      const obs = new MutationObserver(function(mutations, mutationObserver){
+          callback(mutations, mutationObserver);
+      });
+      obs.observe( obj, { childList: true, subtree: true });
+    }
+  }
+})();
+
+const mutationDelay =  1000;
+const mutationCallback = throttle(function() {
+  (document.querySelectorAll('audio') || [])
+    .forEach($audio => $audio.playbackRate = state.speed);
+}, mutationDelay);
+
+observeDOM(document, mutationCallback);
+
 const handleDocumentClick = (event, $headers) => {
   const path = event.path || (event.composedPath && event.composedPath());
   state.keyboardActive = false;
@@ -25,11 +54,6 @@ const handleDocumentClick = (event, $headers) => {
   ($headers || []).forEach(($header) => {
     state.keyboardActive |= path.includes($header);
   });
-
-  if (event.target.getAttribute('data-testid') === "audio-play") {
-    (document.querySelectorAll('audio') || [])
-      .forEach($audio => $audio.playbackRate = state.speed);
-  }
 }
 
 const handleDocumentKeyPress = (event) => {
