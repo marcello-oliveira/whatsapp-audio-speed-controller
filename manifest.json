@@ -4,6 +4,7 @@
   "version": "0.2",
   "description": "Increase your produtivity",
   "icons": {
+    "128": "128.png",
     "16": "icon16.png"
   },
   "author": "Marcello Marques de Oliveira",
